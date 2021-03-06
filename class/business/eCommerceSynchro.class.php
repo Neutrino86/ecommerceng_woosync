@@ -4055,7 +4055,7 @@ class eCommerceSynchro
 															}
 														}
 													}
-
+													$fk_unit = null;
 													$label = !empty($item['label']) ? $item['label'] : '';
 													$price = $item['price'];
 													$discount = $item['discount'];
@@ -4064,6 +4064,7 @@ class eCommerceSynchro
 														$product = new Product($this->db);
 														$product->fetch($fk_product);
 														$description = $product->description;
+														$fk_unit = $product->fk_unit; //on conserve l'unité rensignée dans dolibarr
 													}
 													$product_type = $item['product_type'] != "simple" ? 1 : 0;
 
